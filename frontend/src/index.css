@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
+
+/* Smooth scrolling */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible outline */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Custom animations */
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: #3b82f6;
+  }
+  50% {
+    border-color: #60a5fa;
+  }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Audio meter styling */
+.meter-bar {
+  transition: transform 50ms ease-out;
+}
+
+/* Button base styles */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-150;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-app-bg;
+  }
+
+  .btn-primary {
+    @apply bg-app-primary text-white hover:bg-blue-600;
+    @apply focus:ring-app-primary;
+  }
+
+  .btn-success {
+    @apply bg-app-success text-white hover:bg-green-600;
+    @apply focus:ring-app-success;
+  }
+
+  .btn-danger {
+    @apply bg-app-error text-white hover:bg-red-600;
+    @apply focus:ring-app-error;
+  }
+
+  .btn-secondary {
+    @apply bg-app-surface text-app-text hover:bg-gray-700 border border-app-border;
+    @apply focus:ring-gray-500;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-app-surface rounded-lg border border-app-border p-4;
+  }
+
+  .card-header {
+    @apply text-lg font-semibold mb-3 pb-2 border-b border-app-border;
+  }
+
+  /* Input styles */
+  .input {
+    @apply bg-app-bg border border-app-border rounded-md px-3 py-2;
+    @apply text-app-text placeholder-app-text-secondary;
+    @apply focus:outline-none focus:ring-2 focus:ring-app-primary focus:border-transparent;
+  }
+
+  /* Slider styles */
+  .slider {
+    @apply w-full h-2 bg-app-bg rounded-lg appearance-none cursor-pointer;
+    @apply focus:outline-none focus:ring-2 focus:ring-app-primary;
+  }
+
+  .slider::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 bg-app-primary rounded-full cursor-pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    @apply w-4 h-4 bg-app-primary rounded-full cursor-pointer border-0;
+  }
+}

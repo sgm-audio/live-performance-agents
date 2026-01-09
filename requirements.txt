@@ -1,0 +1,38 @@
+# Core dependencies
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Audio I/O
+sounddevice>=0.4.6
+soundfile>=0.12.1
+
+# Audio Processing
+librosa>=0.10.0
+numba>=0.58.0
+
+# MIDI
+pretty-midi>=0.2.10
+mido>=1.3.0
+
+# Machine Learning
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# System monitoring
+psutil>=5.9.0
+
+# Utilities
+python-dotenv>=1.0.0
+
+# Web API and WebSocket
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+websockets>=12.0
+python-multipart>=0.0.6
+
+# Development (optional - install with: pip install -e ".[dev]")
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.0.0

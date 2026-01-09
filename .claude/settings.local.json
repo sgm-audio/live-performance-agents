@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for:*)",
+      "Bash(do sed -i 's/from \\\\.\\\\.\\\\.core import/from core import/g' \"$file\")",
+      "Bash(done)",
+      "Bash(grep:*)",
+      "Bash(python:*)",
+      "Bash(timeout 10 python:*)",
+      "Bash(pip install:*)"
+    ]
+  }
+}
