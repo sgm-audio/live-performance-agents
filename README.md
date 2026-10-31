@@ -31,7 +31,7 @@ The system uses a **message-passing agent architecture**:
 
 ```bash
 # Clone the repository
-git clone https://github.com/sonic-mind-forge/live-performance-agents.git
+git clone https://github.com/sgm-audio/live-performance-agents.git
 cd live-performance-agents
 
 # Create virtual environment (recommended)
@@ -151,11 +151,6 @@ The system includes a professional web-based control panel for monitoring and co
 - **Performance Monitoring** - CPU usage, latency, warnings, and errors
 - **WebSocket Communication** - 30Hz audio updates, 10Hz status updates
 
-### Screenshots
-
-![Dashboard](docs/screenshots/dashboard.png)
-*Main dashboard showing all agent status and real-time audio meters*
-
 ### API Endpoints
 
 **WebSocket:** `ws://localhost:8080/ws`
@@ -177,19 +172,15 @@ See [frontend/README.md](frontend/README.md) for detailed frontend documentation
 
 ## Documentation
 
-See [CLAUDE.md](CLAUDE.md) for detailed architecture documentation and development guidelines.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for architecture and development notes.
 
 ## Examples
 
-Check the `examples/` directory for:
-- Basic system setup
-- Audio processing demos
-- MIDI control examples
-- Live looping workflows
+`examples/basic_setup.py` starts the system with the default agents.
 
 ## License
 
-MIT License - see LICENSE file for details
+MIT. See [LICENSE](LICENSE).
 
 ## Credits
 
