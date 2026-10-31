@@ -107,3 +107,8 @@ Thumbs.db
 # Editor backup files
 *.bak
 *.orig
+
+# Local agent/tool files
+.claude/
+CLAUDE.md
+AGENTS.md
