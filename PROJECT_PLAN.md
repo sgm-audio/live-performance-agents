@@ -11,7 +11,7 @@
 
 ## Executive Summary
 
-This project plan outlines the roadmap to complete the Live Performance Agents system, transforming it from a 90% production-ready backend with a minimal frontend into a fully functional, production-ready live audio performance platform. The plan is designed for team collaboration and provides clear milestones, tasks, and assignments for developers joining the project.
+This project plan outlines the roadmap to complete the Live Performance Agents system, transforming it from a mostly-built backend with a minimal frontend into a fully functional, production-ready live audio performance platform. The plan is designed for team collaboration and provides clear milestones, tasks, and assignments for developers joining the project.
 
 ## Project Goals
 
@@ -68,7 +68,7 @@ This project plan outlines the roadmap to complete the Live Performance Agents s
   - Estimated: 2 hours
 
 - [ ] **DEV-004**: Review architecture documentation
-  - Read CLAUDE.md thoroughly
+  - Read docs/ARCHITECTURE.md thoroughly
   - Read CONTRIBUTING.md
   - Review code structure
   - Estimated: 4 hours
