@@ -460,7 +460,7 @@ This is usually fine - the system will fall back to simulated audio. To use real
 1. **Explore the web interface** - Click through all tabs (Dashboard, Effects, MIDI, Loops, Automation)
 2. **Read the API docs** - http://localhost:8080/docs
 3. **Check examples** - See `examples/` directory
-4. **Read architecture docs** - See `CLAUDE.md` and `docs/FRONTEND_ARCHITECTURE.md`
+4. **Read architecture docs** - See `docs/ARCHITECTURE.md` and `docs/FRONTEND_ARCHITECTURE.md`
 
 ### Building Your Performance
 
@@ -486,7 +486,7 @@ This is usually fine - the system will fall back to simulated audio. To use real
 
 ### Documentation
 
-- **Architecture:** `CLAUDE.md`
+- **Architecture:** `docs/ARCHITECTURE.md`
 - **Frontend:** `frontend/README.md`
 - **Fan Engagement:** `docs/FAN_ENGAGEMENT_FEATURES.md`
 - **Branding:** `docs/BRANDING_STRATEGY.md`
