@@ -113,7 +113,7 @@ live-performance-agents/
 ├── examples/                  # Usage examples
 ├── docs/                      # Documentation
 ├── main.py                    # Main entry point
-└── CLAUDE.md                  # Architecture guidelines
+└── docs/ARCHITECTURE.md       # Architecture notes
 ```
 
 ## Development Workflow
@@ -372,7 +372,7 @@ Fixes #38
 
 ## Pull Request Process
 
-1. **Update Documentation**: Ensure README, CLAUDE.md, or other docs are updated if needed
+1. **Update Documentation**: Ensure README, docs/ARCHITECTURE.md, or other docs are updated if needed
 2. **Test Your Changes**: Run tests and verify functionality
 3. **Format Code**: Run formatters (Black for Python, ESLint for JS)
 4. **Write Clear PR Description**:
@@ -462,7 +462,7 @@ Add screenshots for UI changes
 
 ## Getting Help
 
-- **Documentation**: Check CLAUDE.md for architecture details
+- **Documentation**: Check docs/ARCHITECTURE.md for architecture details
 - **Issues**: Search existing issues or create a new one
 - **Discussions**: Use GitHub Discussions for questions
 - **Email**: Contact scottmills306@gmail.com

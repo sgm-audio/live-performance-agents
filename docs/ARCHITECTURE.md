@@ -1,12 +1,10 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# Architecture and development notes
 
 ## Project Overview
 
-**Live Performance Agents** is a production-ready, real-time agent-based system for live audio performance. The system features 11 specialized Python agents that communicate via a high-performance message bus to handle audio I/O, DSP effects, MIDI control, looping, automation, and synchronization.
+**Live Performance Agents** is a real-time, agent-based system for live audio performance. Python agents talk over an in-process message bus to handle audio I/O, DSP effects, MIDI control, looping, automation, and synchronization.
 
-**Current Status:** 90% production-ready with real hardware integration (sounddevice, mido, librosa).
+**Current status:** in development. Audio, MIDI and time-stretching use real libraries (sounddevice, mido, librosa). There's no test suite yet: `pyproject.toml` points pytest at a `tests/` folder that doesn't exist.
 
 ## Installation & Setup
 
@@ -54,11 +52,11 @@ class MyAgent(BaseAgent):
 
 ### Agent Architecture (`agents/`)
 
-**11 Production Agents:**
+**Agents** (the status column is my own rough estimate, not a test result):
 
-| Agent | Real I/O | Status | Purpose |
+| Agent | Real I/O | Est. done | Purpose |
 |-------|----------|--------|---------|
-| RealtimeAudioIOAgent | sounddevice ✅ | 90% | Audio capture/playback, <5ms latency |
+| RealtimeAudioIOAgent | sounddevice ✅ | 90% | Audio capture/playback (latency depends on buffer size; not measured) |
 | LiveEffectsChainAgent | scipy DSP ✅ | 95% | 15 real-time effects, presets, scenes |
 | MIDIControlAgent | mido ✅ | 90% | MIDI devices, CC mapping, MIDI learn |
 | LiveLoopingAgent | librosa ✅ | 85% | Loop recording, time-stretch, pitch-shift |
@@ -66,7 +64,7 @@ class MyAgent(BaseAgent):
 | PerformanceAutomationAgent | - | 85% | Parameter automation, scenes, macros |
 | PerformanceMonitoringAgent | psutil ✅ | 90% | CPU/latency monitoring, alerts |
 | BackupRedundancyAgent | - | 85% | State snapshots, failover |
-| IndustryStandardsAgent | - | 95% | LUFS compliance, standards checking |
+| IndustryStandardsAgent | - | 95% | Compares loudness to EBU R128 / ATSC targets. Its "LUFS" is a simple RMS-based estimate (no K-weighting or gating), and "true peak" is the sample peak |
 | VisualLightingControlAgent | - | 45% | DMX output (needs pyartnet) |
 | LiveMixingDynamicsAgent | - | 40% | Auto-mixing (needs real DSP) |
 
@@ -86,7 +84,7 @@ MIDI Controller → mido → MIDIControlAgent
                   sounddevice → Speakers
 ```
 
-**Typical Latency:** ~5-10ms (professional-grade)
+**Latency:** not measured yet. Buffer latency is `buffer_size / sample_rate`, e.g. 256 samples at 48 kHz = 5.3 ms, plus driver and processing time.
 
 ## Key Patterns
 
@@ -235,7 +233,7 @@ shifted = librosa.effects.pitch_shift(audio, sr=sample_rate, n_steps=semitones)
 - Modulation: Phaser, Tremolo, Vibrato
 - Distortion: Waveshaping, Saturation
 
-**All optimized for <2ms latency using scipy.signal**
+All of them are built on `scipy.signal`. Per-effect processing time hasn't been measured.
 
 ### Effect Processing Flow
 

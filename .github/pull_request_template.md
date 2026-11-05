@@ -86,7 +86,7 @@ Before submitting this PR, please ensure:
 - [ ] I have removed any console.log statements or debug code
 
 ### Documentation
-- [ ] I have updated the documentation (README, CLAUDE.md, etc.) to reflect my changes
+- [ ] I have updated the documentation (README, docs/ARCHITECTURE.md, etc.) to reflect my changes
 - [ ] I have added docstrings/comments to new functions and classes
 - [ ] I have updated type hints (Python) or prop types (React)
 
